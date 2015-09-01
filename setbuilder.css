@@ -24,7 +24,7 @@ body{
 }
 
 #riot_footer{
-    position: fixed;
+    position: absolute;
 
     clear: both;
     bottom: 0;
