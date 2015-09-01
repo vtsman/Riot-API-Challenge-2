@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="itembuilder">
+<head>
+    <meta charset="UTF-8">
+    <title>Automatic Itemset Builder</title>
+
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js'></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular-sanitize.js"></script>
+
+    <script src="newblur.js"></script>
+
+    <script src="setbuilder.js"></script>
+    <script src="setdownload.js"></script>
+
+    <script src="is.js"></script>
+
+    <link rel="stylesheet" href="./animate.css">
+
+    <script src="fileSaver.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.3.min.js"></script>
+
+    <link href="./setbuilder.css" media="all" rel="stylesheet" />
+</head>
+<body ng-controller="ItemBuilderController as builder" ng-init="builder.init()">
+    <progressbar id="loadingbar" class="progress-striped active" value="progress" ng-if="progress > -1">Downloading</progressbar>
+    <div id="uname_form" class="middle">
+        <div class="input-group">
+            <input type="text" id="uname" class="form-control" ng-model="uname" placeholder="Summoner Name" ng-keypress="builder.loginKeypress($event)">
+            <div class="input-group-btn">
+                <button type="button" id="region-dropdown" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{builder.region.name}}<span class="caret"></span></button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li ng-repeat="reg in builder.getRegions()" ng-click="builder.setRegion(reg)"><a href="">{{reg.name}}</a><br></li>
+                    <li><div> </div></li>
+                </ul>
+            </div>
+            <span class="input-group-btn">
+                <button id="uname_submit" class="btn btn-default" ng-click="builder.getUser(uname)">
+                    Generate item sets
+                </button>
+            </span>
+        </div>
+    </div>
+    <div class="champion_list container fadein" ng-if="builder.summ_champ_list.length > 0">
+        <ul class="row">
+            <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" ng-repeat="champ in builder.getChampList() track by $index">
+                <img src="{{builder.getImage(champ.champ)}}" class="champion_select_icon" tooltip="{{builder.getChampTooltip(champ)}}" ng-click="builder.calculate(champ)">
+            </li>
+        </ul>
+    </div>
+    <div id="riot_footer">
+        build.lol isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
+    </div>
+</body>
+</html>

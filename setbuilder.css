@@ -1,0 +1,108 @@
+@font-face {
+    font-family: deja_vu;
+    src: url(DejaVuSans.ttf);
+}
+
+div{
+    font-family: deja_vu;
+}
+
+body{
+    background: url("1.jpg") fixed;
+}
+
+.fadein.ng-enter {
+    animation: fadeInDown .25s;
+}
+
+.fadein.ng-leave {
+    animation: fadeOutDown .25s;
+}
+
+.tooltip-inner {
+    white-space:pre-wrap;
+}
+
+#riot_footer{
+    position: fixed;
+
+    clear: both;
+    bottom: 0;
+    width: 90%;
+    font-size: x-small;
+    padding: 5px;
+    margin-top: 50px;
+    z-index: -1;
+    border-radius: 3px;
+
+    background-color: rgba(255, 255, 255, 0.75);
+
+    display: block;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#uname_form{
+    padding: 25px;
+    margin: 0 auto;
+    width: 60%;
+    transition: transform .2s ease-in-out;
+}
+
+.middle{
+    transform: translate3d(0px, 40vh, 0px);
+}
+
+#uname_form input,
+#uname_form button,
+#uname_form div button{
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+#region-dropdown{
+    border-radius: 0;
+}
+
+#loadingbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+}
+
+.champion_select_icon{
+    border-radius: 10px;
+    clip: rect(115px,115px,5px,5px);
+}
+
+.champion_list ul {
+    padding:0 0 0 0;
+    margin:0 0 0 0;
+}
+.champion_list ul li {
+    list-style:none;
+    margin-bottom:25px;
+}
+
+.item_list ul {
+    padding:0 0 0 0;
+    margin:0 0 0 0;
+}
+
+.item_list ul li {
+    list-style:none;
+    margin-bottom:25px;
+}
+
+.scrollable{
+    overflow: scroll;
+}
+
+#itemsetJSON{
+    height: 250px;
+    background-color: #F2F2F2;
+    padding: 5px;
+    border-radius: 3px;
+    border: solid 1px #C1C1C1;
+}

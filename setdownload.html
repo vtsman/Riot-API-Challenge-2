@@ -1,0 +1,42 @@
+<div class="modal-header">
+    <h3 class="modal-title">Download Itemset</h3>
+</div>
+<div class="modal-body scrollable">
+    <accordion close-others="false">
+        <accordion-group heading="Itemset Preview">
+            <div>
+                <div id="itemsetPreview" ng-repeat="block in itemset.blocks">
+                    <div class="itemBlockTitle">
+                        {{block.type}}
+                    </div>
+                    <div class="item_list container fadein center col-md-12">
+                        <ul class="row">
+                            <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" ng-repeat="item in block.items track by $index">
+                                <img src="{{getImage(items[item.id])}}" class="champion_select_icon" tooltip="{{items[item.id].name}}">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </accordion-group>
+        <accordion-group heading="Download">
+            <div ng-if="is.safari()">
+                <div class="scrollable" id="itemsetJSON">
+                    {{itemsetString}}
+                </div>
+                Save the above text as {{filename}}, then
+                <span ng-if="is.windows()">copy {{filename}} to {{windowsLocation}}</span>
+                <span ng-if="is.mac()">open your Applications folder, and right click on "League of Legends.app". Then, go to {{macLocation}} and move {{filename}} into it.</span>
+            </div>
+            <div ng-if="is.not.safari()">
+                Press the
+                <button type="button" class="btn btn-default" aria-label="Download" ng-click="download()">
+                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                </button>
+                button, then
+                <span ng-if="is.windows()">copy {{filename}} to {{windowsLocation}}</span>
+                <span ng-if="is.mac()">open your Applications folder, and right click on "League of Legends.app". Then, go to {{macLocation}} and move {{filename}} into it.</span>
+            </div>
+        </accordion-group>
+    </accordion>
+</div>
