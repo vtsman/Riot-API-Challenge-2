@@ -6,7 +6,6 @@ onmessage = function(e) {
         if(status == 200){
             e.data.current_matches.push(data);
         }
-        sleep(1500)
         postMessage(e.data);
     });
 }
