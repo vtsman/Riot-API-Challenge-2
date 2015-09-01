@@ -5,6 +5,12 @@ Itemsetup is a website that analyzes a summoner's ranked games, and generates a 
 is specifically set up to not omit alternate build paths. Due to this design decision, all purchased jungle items
 and boots will show up somewhere in the item set.
 
+For now, there is a 1.5 second delay between getting matches. This will be removed once I get a proper API key.
+
+Live Link:
+----
+http://build.lol/itemsetup/setbuilder.html
+
 Technologies Used:
 ----
 * Flask
