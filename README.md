@@ -7,8 +7,6 @@ and boots will show up somewhere in the item set.
 
 This website is especially valuable when learning a new champion. If you want to learn Ekko, for example, you can download C9 Hai's ranked games and turn them into an itemset. Now the burden of figuring out how to itemize has been lifted.
 
-For now, there is a 1.5 second delay between getting matches. This will be removed once I get a proper API key.
-
 Live Link:
 ----
 http://build.lol/itemsetup/setbuilder.html
